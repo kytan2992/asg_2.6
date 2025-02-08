@@ -1,2 +1,2 @@
 # asg_2.6
-for ce9 assignment 2.6
+Terraform code for creating DynamoDB database with IAM role and an EC2 for read access
