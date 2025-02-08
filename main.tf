@@ -32,62 +32,49 @@ resource "aws_iam_policy" "policy" {
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
-      #{
-        #Effect = "Allow"
-        #Action = [
-          #"dynamodb:BatchGetItem",
-          #"dynamodb:DescribeImport",
-          #"dynamodb:ConditionCheckItem",
-          #"dynamodb:DescribeContributorInsights",
-          #"dynamodb:Scan",
-          #"dynamodb:ListTagsOfResource",
-          #"dynamodb:Query",
-          #"dynamodb:DescribeStream",
-          #"dynamodb:DescribeTimeToLive",
-          #"dynamodb:DescribeGlobalTableSettings",
-          #"dynamodb:PartiQLSelect",
-          #"dynamodb:DescribeTable",
-          #"dynamodb:GetShardIterator",
-          #"dynamodb:DescribeGlobalTable",
-          #"dynamodb:GetItem",
-          #"dynamodb:DescribeContinuousBackups",
-          #"dynamodb:DescribeExport",
-          #"dynamodb:GetResourcePolicy",
-          #"dynamodb:DescribeKinesisStreamingDestination",
-          #"dynamodb:DescribeBackup",
-          #"dynamodb:GetRecords",
-          #"dynamodb:DescribeTableReplicaAutoScaling"
-        #]
-        #Resource = aws_dynamodb_table.bookinventory.arn
-      #},
-      #{
-        #Effect = "Allow"
-        #Action = [
-          #"dynamodb:ListContributorInsights",
-          #"dynamodb:DescribeReservedCapacityOfferings",
-          #"dynamodb:ListGlobalTables",
-          #"dynamodb:ListTables",
-          #"dynamodb:DescribeReservedCapacity",
-          #"dynamodb:ListBackups",
-          #"dynamodb:GetAbacStatus",
-          #"dynamodb:ListImports",
-          #"dynamodb:DescribeLimits",
-          #"dynamodb:DescribeEndpoints",
-          #"dynamodb:ListExports",
-          #"dynamodb:ListStreams"
-        #]
-        #Resource = "*"
-      #},
       {
         Effect = "Allow"
         Action = [
-          "dynamodb:List*",
-          "dynamodb:Get*",
-          "dynamodb:Describe*",
+          "dynamodb:BatchGetItem",
+          "dynamodb:DescribeImport",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeContributorInsights",
           "dynamodb:Scan",
+          "dynamodb:ListTagsOfResource",
           "dynamodb:Query",
+          "dynamodb:DescribeStream",
+          "dynamodb:DescribeTimeToLive",
+          "dynamodb:DescribeGlobalTableSettings",
           "dynamodb:PartiQLSelect",
-          "dynamodb:ConditionCheckItem"
+          "dynamodb:DescribeTable",
+          "dynamodb:GetShardIterator",
+          "dynamodb:DescribeGlobalTable",
+          "dynamodb:GetItem",
+          "dynamodb:DescribeContinuousBackups",
+          "dynamodb:DescribeExport",
+          "dynamodb:GetResourcePolicy",
+          "dynamodb:DescribeKinesisStreamingDestination",
+          "dynamodb:DescribeBackup",
+          "dynamodb:GetRecords",
+          "dynamodb:DescribeTableReplicaAutoScaling"
+        ]
+        Resource = aws_dynamodb_table.bookinventory.arn
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:ListContributorInsights",
+          "dynamodb:DescribeReservedCapacityOfferings",
+          "dynamodb:ListGlobalTables",
+          "dynamodb:ListTables",
+          "dynamodb:DescribeReservedCapacity",
+          "dynamodb:ListBackups",
+          "dynamodb:GetAbacStatus",
+          "dynamodb:ListImports",
+          "dynamodb:DescribeLimits",
+          "dynamodb:DescribeEndpoints",
+          "dynamodb:ListExports",
+          "dynamodb:ListStreams"
         ]
         Resource = "*"
       }
